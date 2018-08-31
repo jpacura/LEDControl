@@ -12,7 +12,7 @@ const int LEDCount = sizeof(LED) / sizeof(LED[0]);
 int LEDColor[LEDCount][4]; // 3 colors per LED + blink variable
 
 // Global variables for multiplexing control
-int multiplexInterval = 50;
+int multiplexInterval = 45;
 int blinkInterval = 10000;
 int counter = 0;
 int blinkCounter = 0;
@@ -42,6 +42,8 @@ void setup()
   setDefaultState();
 
   Serial.begin(9600);
+
+  Serial.write(0);
 }
 
 void loop()
